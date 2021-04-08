@@ -1,0 +1,39 @@
+.products {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2em;
+    padding: 2em;
+}
+
+.products>div>div {
+    height: 30%;
+    margin: 1em;
+    color: #404040;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.products>div>img {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.products>div>.social-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 10%;
+    width: 80%;
+}
+
+.products>div {
+    background: #DDECE9 0% 0% no-repeat padding-box;
+    border-radius: 11px;
+    height: 30em;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

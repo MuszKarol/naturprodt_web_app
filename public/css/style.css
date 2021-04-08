@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -22,7 +23,7 @@ body {
     width: 50%;
 }
 
-form {
+form.login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,4 +79,125 @@ img {
     img {
         width: 20em;
     }
+}
+
+.base-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+nav {
+    height: 10vh;
+    width: 100%;
+    background: transparent linear-gradient(180deg, #3EBF8ECC 0%, #55AA68E3 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #0000005C;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+nav > img {
+    width: 10%;
+    margin-right: 2em;
+    margin-left: 1em;
+}
+
+ul.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    color: white;
+    margin-right: auto;
+    padding: 0;
+    align-items: center;
+}
+
+li {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+}
+
+li i {
+    font-size: 2em;
+}
+
+.button {
+    box-shadow: 0px 5px 5px #00000029;
+    border: 3px solid #FFFFFF;
+    border-radius: 2em;
+    margin-left: 1em;
+    text-align: center;
+    letter-spacing: 0.7px;
+    color: white;
+    padding: 0.2em;
+    width: 8em;
+}
+
+ul.accounts {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    color: white;
+    margin-left: auto;
+    padding: 0;
+    align-items: center;
+}
+
+ul.accounts :nth-child(4) {
+    margin-left: 5em;
+}
+
+.search-bar {
+    width: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-bar>form>input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 5px #00000029;
+    border: 2px solid #707070;
+    border-radius: 15px;
+    width: 100%;
+    text-align: left;
+    color: gray;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.add-project {
+    background: transparent linear-gradient(180deg, #2AD2AF 0%, #51AE6F 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 5px #00000029;
+    border: 1px solid #707070;
+    border-radius: 1.5em;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: white;
+    width: 20%;
+}
+
+.add-project > i {
+    padding: 1em;
 }
