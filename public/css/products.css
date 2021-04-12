@@ -1,8 +1,7 @@
 .products {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-gap: 2em;
-    padding: 2em;
 }
 
 .products>div>div {
@@ -32,8 +31,91 @@
     background: #DDECE9 0% 0% no-repeat padding-box;
     border-radius: 11px;
     height: 30em;
-    width: 25em;
+    width: 20em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+@media only screen and (max-device-width: 1050px){
+	nav {
+		height: 10vh;
+		width: 100%;
+		background: transparent linear-gradient(180deg, #3EBF8ECC 0%, #55AA68E3 100%) 0% 0% no-repeat padding-box;
+		box-shadow: 0px 6px 6px #0000005C;
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+	}
+
+    * {
+        font-size: 36px;
+    }
+	
+	nav > img {display: none;}
+	
+	ul.menu {
+		clear: both;
+		display: none;
+	}
+	
+	ul.accounts {
+		display: flex;
+		flex-direction: row;
+		list-style-type: none;
+		color: white;
+		margin-left: auto;
+		padding: 0;
+		align-items: center;
+	}
+	i.fab.fa-snapchat, i.fab.fa-facebook, i.fab.fa-instagram {
+		display: none;
+		clear: both;
+	}
+	
+	.search-bar {
+		clear: both;
+		display: none;
+	}
+	
+	main {
+		display: flex;
+		flex-direction: column;
+		width: 100%
+	}
+	
+	header {
+		height: 20vh;
+	}
+	
+	.add-project {
+		margin-left: auto;
+		margin-right: auto;
+		width: 60%;
+	}
+	
+	.products {
+		display: grid;
+		grid-template-columns: auto;
+	}
+	
+	.products>div {
+		background: #DDECE9 0% 0% no-repeat padding-box;
+		border-radius: 11px;
+		height: 40em;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: auto;
+	}
+	
+	.fas.fa-leaf {
+		display: flex;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: 1em;
+		color: white;
+		font-size: 4vh;
+	}
 }
