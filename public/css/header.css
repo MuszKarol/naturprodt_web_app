@@ -1,0 +1,89 @@
+.header {
+    height: 20vh;
+    color: white;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: transparent linear-gradient(180deg, #3EBF8ECC 0%, #55AA68E3 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #0000005C;
+}
+
+.header__logo {
+    align-self: center;
+}
+
+.header__logo>img {
+    width: 15em;
+}
+
+.header__list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__item.menu_item {
+    margin-right: 30px;
+    width: 6em;
+    text-align: center;
+    box-shadow: 0px 5px 5px #00000029;
+    border: 3px solid #FFFFFF;
+    border-radius: 15px;
+}
+
+.header__list_button {
+    color: white;
+    text-decoration: none
+}
+
+.header__item.button {
+    margin-left: 20px;
+}
+
+.account_list_button {
+    color: white;
+    text-decoration: none
+}
+
+
+.header__container__second {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding: 40px;
+}
+
+.header__button {
+    color: white;
+}
+
+.header__button.addProject {
+    background: transparent linear-gradient(180deg, #2AD2AF 0%, #51AE6F 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 5px #00000029;
+    border: 1px solid #707070;
+    border-radius: 28px;
+    width: 10em;
+    height: 4vh;
+}
+
+.header_searchForm.searchForm {
+    margin-left: 10em;
+}
+
+.header_searchForm.searchForm>input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 5px #00000029;
+    border: 2px solid #707070;
+    border-radius: 28px;
+    width: 30em;
+    height: 3vh;
+    padding-left: 10px;
+}
+
+
+/*tablet*/
+@media only screen and (max-device-width: 767px){
+
+}
