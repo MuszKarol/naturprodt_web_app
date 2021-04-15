@@ -1,15 +1,16 @@
+
 .products__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
-	padding: 2em;
+    padding: 2em;
     overflow: auto;
 }
 
 .products__container>div {
 	background: #DDECE9 0% 0% no-repeat padding-box;
 	border-radius: 11px;
-	width: 25em;
+	width: auto;
 }
 
 .product.product__overview {
@@ -22,17 +23,23 @@
 }
 
 .products__container>div>img {
-    height: 50%;
+    height: 45%;
     width: 100%;
     object-fit: cover;
 }
 
 .product.social-section {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	height: 10%;
-	margin: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.product_list.social_list {
+    display: flex;
+    justify-content: center;
+}
+
+.social_item.icon {
+    margin-right: 2em;
 }
 
 .fas.fa-heart {
@@ -45,4 +52,9 @@
 
 .fas.fa-shopping-cart {
 	color: #f58a42;
+}
+
+
+@media only screen and (max-device-width: 850px) {
+
 }
