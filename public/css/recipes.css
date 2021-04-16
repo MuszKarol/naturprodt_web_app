@@ -1,0 +1,30 @@
+.recipes__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 6em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.recipes__container>div {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+	width: auto;
+}
+
+.recipes__container>div>img {
+    width: 50%;
+    height: 35vh;
+    object-fit: cover;
+}
+
+.recipe.recipe__overview {
+    padding: 1em;
+    width: 50%;
+}
+
+@media only screen and (max-device-width: 865px) {
+
+}

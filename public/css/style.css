@@ -13,5 +13,6 @@ ul {
 }
 
 nav {
-    display: block;
+    display: flex;
+	justify-content: center;
 }

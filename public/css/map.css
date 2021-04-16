@@ -1,0 +1,13 @@
+.map {
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+}
+
+.map__container {
+    margin: auto;
+}
+
+@media only screen and (max-device-width: 865px) {
+
+}

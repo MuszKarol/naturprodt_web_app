@@ -14,7 +14,8 @@
 }
 
 .header__logo {
-    align-self: center;
+    display: flex;
+	justify-content: center;
 }
 
 .header__logo>img {
@@ -37,11 +38,13 @@
 
 .header__list_button {
     color: white;
-    text-decoration: none
+    text-decoration: none;
+	font-size: 1em;
 }
 
 .header__item.button {
     margin-left: 20px;
+	font-size: 1.2em;
 }
 
 .account_list_button {
@@ -67,7 +70,7 @@
     border: 1px solid #707070;
     border-radius: 28px;
     width: 10em;
-    height: 4em;
+    font-size: 1.2em;
 }
 
 .header_searchForm.searchForm {
@@ -85,6 +88,6 @@
 }
 
 
-@media only screen and (max-device-width: 850px) {
+@media only screen and (max-device-width: 865px) {
 
 }
