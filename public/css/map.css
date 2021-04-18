@@ -1,13 +1,21 @@
 .map {
-    height: 92vh;
+    height: 92.5vh;
     display: flex;
     justify-content: center;
 }
 
-.map__container {
-    margin: auto;
+
+.map__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.map__container iframe {
+    width: 100vh;
+    height: 80vh;
+    box-shadow: 0px 6px 6px #0000002d;
 }
 
 @media only screen and (max-device-width: 865px) {
-
 }
