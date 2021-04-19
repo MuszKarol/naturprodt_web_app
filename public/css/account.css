@@ -1,0 +1,83 @@
+.account__info {
+}
+
+.account__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.account__nav.menu__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgba(0, 141, 0, 0.287);
+    width: 20vh;
+    min-width: 15vh;
+}
+
+.menu__list.list {
+    text-align: center;
+    padding: 0;
+}
+
+.account__info {
+    overflow-y: initial;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.account__info.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(250, 245, 245);
+    height: 40vh;
+}
+
+.account_info.settings {
+    background-color: rgb(221, 221, 250);
+    height: 60vh;
+}
+
+.account__info.table {
+    align-items: center;
+}
+
+.account_info.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5vh;
+}
+
+.account_info.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+}
+
+.account_info.settings__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings__form.item {
+    padding: 2vh;
+}
+
+.settings__form.item>* {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings__form.item>input {
+    width: 25vh;
+}
+
+

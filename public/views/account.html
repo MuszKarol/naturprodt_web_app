@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/account.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d8d0f3c8c2.js" crossorigin="anonymous"></script>
@@ -40,17 +41,49 @@
                 </ul>
             </nav>
         </section>
-        <section class="header__container__second">
-            <button class="header__button addProject">
-                <i class="fas fa-plus"></i>
-                Add
-            </button>
-            <div class="header__searchBar searchBar">
-                <form class="header_searchForm searchForm">
-                    <input placeholder="search project">
-                </form>
-            </div>
-        </section>
     </header>
+
+    <div class="account__info">
+        <div class="account__container">
+            <div class="account__nav menu__list">
+                <ul class="menu__list list">
+                    <li class="menu__list item">Informations</li>
+                    <li class="menu__list item">Settings</li>
+                </ul>
+            </div>
+            <div class="account__info">
+                <section class="account__info info">
+                    <table class="account__info table">
+                        <tr>
+                            <td>nick</td>
+                            <td>example</td>
+                        </tr>
+                        <tr>
+                            <td>e-mail</td>
+                            <td>example@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>---</td>
+                            <td>-----</td>
+                        </tr>
+                    </table>
+                </section>
+                <section class="account_info settings">
+                    <form class="account_info settings__form" action="*">
+                        <div class="settings__form item">
+                            <label>Nick</label> <input type="text" name="nick"/>
+                        </div>
+                        <div class="settings__form item">
+                            <label>Email</label> <input type="text" name="email"/>
+                        </div>
+                        <div class="settings__form item">
+                            <button type="submit">Accept changes</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
