@@ -29,7 +29,7 @@
 
 .header__item.menu_item {
     margin-right: 30px;
-    width: 6em;
+    width: 8em;
     text-align: center;
     box-shadow: 0px 5px 5px #00000029;
     border: 3px solid #FFFFFF;
@@ -39,12 +39,12 @@
 .header__list_button {
     color: white;
     text-decoration: none;
-	font-size: 1em;
+	font-size: 1.4em;
 }
 
 .header__item.button {
     margin-left: 20px;
-	font-size: 1.2em;
+	font-size: 1.6em;
 }
 
 .account_list_button {
@@ -55,9 +55,10 @@
 
 .header__container__second {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: transparent;
-    padding: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .header__button {
@@ -70,12 +71,9 @@
     border: 1px solid #707070;
     border-radius: 28px;
     width: 10em;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
-.header_searchForm.searchForm {
-    margin-left: 10em;
-}
 
 .header_searchForm.searchForm>input {
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -85,9 +83,46 @@
     width: 30em;
     height: 4em;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 
-@media only screen and (max-device-width: 865px) {
+@media only screen and (max-device-width: 860px) {
+    .header__logo {
+        display: none;
+    }
+
+    .header__nav.menu {
+        display: none;
+    }
+
+    .header__nav.account {
+        display: none;
+    }
+
+    .header__container__second {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        background-color: transparent;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .header__button.addProject {
+        height: 2.5em;
+        width: 8em;
+    }
+    
+    .header__searchBar.searchBar {
+        margin-bottom: 40px;
+        height: 3em;
+    }
+
+    .header_searchForm.searchForm>input {
+        width: 22em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
 }
