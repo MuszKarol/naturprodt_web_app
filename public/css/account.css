@@ -1,27 +1,4 @@
 .account__info {
-}
-
-.account__container {
-    display: flex;
-    flex-direction: row;
-}
-
-.account__nav.menu__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: rgba(0, 141, 0, 0.287);
-    width: 20vh;
-    min-width: 15vh;
-}
-
-.menu__list.list {
-    text-align: center;
-    padding: 0;
-}
-
-.account__info {
-    overflow-y: initial;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -31,53 +8,89 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(250, 245, 245);
-    height: 40vh;
-}
-
-.account_info.settings {
-    background-color: rgb(221, 221, 250);
-    height: 60vh;
+    height: 30vh;
 }
 
 .account__info.table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.account__info.table>tbody {
+    width: 50%;
+    background: transparent linear-gradient(180deg, #FFFFFF 0%, #aeebe2 0%, #b9da91 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 5px #00000029;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    border: none;
+    color: #2f2f2fc4;
+    margin: 1em;
+    padding: 5vh;
+}
+
+.account__info.table>tbody>tr {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.account_info.settings {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5vh;
-}
 
 .account_info.settings {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5vh;
+    height: 60vh;
 }
 
 .account_info.settings__form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 5vh;
+    width: 50%;
+    height: 70%;
     align-items: center;
+    background: transparent linear-gradient(180deg, #FFFFFF 0%, #aeebe2 0%, #b9da91 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 5px #00000029;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    border: none;
+    color: #2f2f2fc4;
 }
 
 .settings__form.item {
     padding: 2vh;
 }
 
-.settings__form.item>* {
+.settings__form.item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+}
+
+.settings__form.item>label {
+    padding: 1vh;
 }
 
 .settings__form.item>input {
-    width: 25vh;
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
 }
 
-
+.settings__form.item>button {
+    background: transparent linear-gradient(180deg, #19CEC5 0%, #6C9441 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 8px 8px #00000029;
+    border-radius: 32px;
+    border: none;
+    color: white;
+    margin: 1em;
+    width: 10em;
+    height: 3em;
+}

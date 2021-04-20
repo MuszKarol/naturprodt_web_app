@@ -29,12 +29,12 @@
             <nav class="header__nav account">
                 <ul class="header__list account_list">
                     <li class="header__item button">
-                        <a href="#" class="account_list_button">
+                        <a href="account.html" class="account_list_button">
                             <i class="fas fa-cog"></i>
                         </a>
                     </li>
                     <li class="header__item button">
-                        <a href="#" class="account_list_button">
+                        <a href="account.html" class="account_list_button">
                             <i class="fas fa-user-circle"></i>
                         </a>
                     </li>
@@ -44,44 +44,41 @@
     </header>
 
     <div class="account__info">
-        <div class="account__container">
-            <div class="account__nav menu__list">
-                <ul class="menu__list list">
-                    <li class="menu__list item">Informations</li>
-                    <li class="menu__list item">Settings</li>
-                </ul>
-            </div>
-            <div class="account__info">
-                <section class="account__info info">
-                    <table class="account__info table">
-                        <tr>
-                            <td>nick</td>
-                            <td>example</td>
-                        </tr>
-                        <tr>
-                            <td>e-mail</td>
-                            <td>example@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>---</td>
-                            <td>-----</td>
-                        </tr>
-                    </table>
-                </section>
-                <section class="account_info settings">
-                    <form class="account_info settings__form" action="*">
-                        <div class="settings__form item">
-                            <label>Nick</label> <input type="text" name="nick"/>
-                        </div>
-                        <div class="settings__form item">
-                            <label>Email</label> <input type="text" name="email"/>
-                        </div>
-                        <div class="settings__form item">
-                            <button type="submit">Accept changes</button>
-                        </div>
-                    </form>
-                </section>
-            </div>
+        <div class="account__info info">
+            <table class="account__info table">
+                <tr>
+                    <td>nick</td>
+                    <td>example</td>
+                </tr>
+                <tr>
+                    <td>e-mail</td>
+                    <td>example@example.com</td>
+                </tr>
+                <tr>
+                    <td>likes</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>dislikes</td>
+                    <td>2</td>
+                </tr>
+            </table>
+        </div>
+        <div class="account_info settings">
+            <form class="account_info settings__form" action="*">
+                <div class="settings__form item">
+                    <label>Nick</label> <input type="text" name="nick"/>
+                </div>
+                <div class="settings__form item">
+                    <label>Email</label> <input type="text" name="email"/>
+                </div>
+                <div class="settings__form item">
+                    <label>Password</label> <input type="text" name="email"/>
+                </div>
+                <div class="settings__form item">
+                    <button type="submit">Accept changes</button>
+                </div>
+            </form>
         </div>
     </div>
 

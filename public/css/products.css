@@ -9,7 +9,7 @@
 .products__container>div {
 	background: #DDECE9 0% 0% no-repeat padding-box;
 	border-radius: 11px;
-	width: 90%;
+	/*width: 90%;*/
     justify-self: center;
 }
 
