@@ -1,14 +1,13 @@
 .map {
-    height: 92.5vh;
     display: flex;
     justify-content: center;
 }
-
 
 .map__container{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: calc((100vh - 87vh - 20px) / 2);
 }
 
 .map__container iframe {
