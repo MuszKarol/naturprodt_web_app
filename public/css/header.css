@@ -1,7 +1,5 @@
 .header {
     color: white;
-    display: inline;
-    justify-content: center;
 }
 
 .header__container {
@@ -10,6 +8,7 @@
     padding: 10px;
     background: transparent linear-gradient(180deg, #3EBF8ECC 0%, #55AA68E3 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 6px #0000005C;
+    height: 8vh;
 }
 
 .header__logo {
