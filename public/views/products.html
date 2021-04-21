@@ -19,6 +19,9 @@
             <div class="header__logo">
                 <img src="../img/logo.svg">
             </div>
+            <div class="mobile__logo">
+                <i class="fas fa-leaf"></i>
+            </div>
             <nav class="header__nav menu">
                 <ul class="header__list menu_list">
                     <li class="header__item menu_item"><a href="products.html" class="header__list_button">Products</a></li>
@@ -40,6 +43,19 @@
                     </li>
                 </ul>
             </nav>
+            <div class="header__menu mobile">
+                <div class="dropdown__menu" style="float:right;">
+                    <button class="dropdown__menu button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="dropdown__menu content">
+                      <a href="products.html">Products</a>
+                      <a href="recipes.html">Bio-Recipes</a>
+                      <a href="map.html">Map</a>
+                      <a href="account.html">Account</a>
+                    </div>
+                  </div>
+            </div>
         </div>
         <div class="header__container__second">
             <button class="header__button addProject"  onClick="javascript:window.open('./form.html', '_blank');">

@@ -15,9 +15,12 @@
 
 <body>
     <header class="header">
-        <section class="header__container">
+        <div class="header__container">
             <div class="header__logo">
                 <img src="../img/logo.svg">
+            </div>
+            <div class="mobile__logo">
+                <i class="fas fa-leaf"></i>
             </div>
             <nav class="header__nav menu">
                 <ul class="header__list menu_list">
@@ -40,18 +43,31 @@
                     </li>
                 </ul>
             </nav>
-        </section>
-        <section class="header__container__second">
+            <div class="header__menu mobile">
+                <div class="dropdown__menu" style="float:right;">
+                    <button class="dropdown__menu button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="dropdown__menu content">
+                      <a href="products.html">Products</a>
+                      <a href="recipes.html">Bio-Recipes</a>
+                      <a href="map.html">Map</a>
+                      <a href="account.html">Account</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="header__container__second">
             <button class="header__button addProject"  onClick="javascript:window.open('./form.html', '_blank');">
-                    <i class="fas fa-plus"></i>
-                    Add
+                <i class="fas fa-plus"></i>
+                Add
             </button>
             <div class="header__searchBar searchBar">
                 <form class="header_searchForm searchForm">
-                    <input placeholder="search recipes">
+                    <input placeholder="search products">
                 </form>
             </div>
-        </section>
+        </div>
     </header>
     <section class="recipes">
         <section class="recipes__container">
