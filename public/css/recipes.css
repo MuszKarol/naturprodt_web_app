@@ -47,5 +47,16 @@
 
 
 @media only screen and (max-device-width: 865px) {
+    .recipes__container>div {
+        flex-direction: column-reverse;
+    }
 
+    .recipes__container>div>img {
+        width: 100%;
+    }
+
+    .recipe.recipe__overview {
+        width: 100%;
+        padding-left: 0;
+    }
 }

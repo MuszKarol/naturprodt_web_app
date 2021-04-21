@@ -18,4 +18,13 @@
 }
 
 @media only screen and (max-device-width: 865px) {
+    .map__container{
+        margin-top: calc((100vh - 58vh - 20px) / 2);
+        margin-bottom: calc((100vh - 58vh - 20px) / 2);
+    }
+
+    .map__container iframe {
+        width: 50vh;
+        height: 50vh;
+    }
 }

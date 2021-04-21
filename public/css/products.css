@@ -67,7 +67,7 @@
 	color: #f58a42;
 }
 
-@media only screen and (max-device-width: 860px) {
+@media only screen and (max-device-width: 865px) {
     .products__container {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
