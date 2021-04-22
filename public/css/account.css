@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 30vh;
+    min-height: 30vh;
 }
 
 .account__info.table {
@@ -42,7 +42,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    min-height: 60vh;
 }
 
 .account_info.settings__form {
@@ -93,4 +93,15 @@
     margin: 1em;
     width: 10em;
     height: 3em;
+}
+
+@media only screen and (max-device-width: 860px) {
+    .account_info.settings__form {
+        width: 70%;
+    }
+
+    .account__info.table>tbody {
+        width: 70%;
+        margin: 0;
+    }
 }
