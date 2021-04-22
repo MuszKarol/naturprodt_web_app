@@ -10,6 +10,7 @@
 	background: #DDECE9 0% 0% no-repeat padding-box;
 	border-radius: 11px;
     justify-self: center;
+    height: 50vh;
 }
 
 .product.product__overview {
@@ -35,14 +36,18 @@
 }
 
 .products__container>div>img {
-    height: 40%;
+    height: 45%;
     width: 100%;
     object-fit: cover;
 }
 
 .product.social-section {
+    height: calc(10vh - 2vh - 5px);
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
 }
 
 .product_list.social_list {
