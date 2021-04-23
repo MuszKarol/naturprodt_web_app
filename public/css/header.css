@@ -51,7 +51,7 @@
 }
 
 
-.header__container__second {
+.management__container {
     display: flex;
     justify-content: space-around;
     background-color: transparent;
@@ -63,7 +63,7 @@
     color: white;
 }
 
-.header__button.addProject {
+.header__button.add__project {
     background: transparent linear-gradient(180deg, #2AD2AF 0%, #51AE6F 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 5px 5px #00000029;
     border: 1px solid #707070;
@@ -73,7 +73,7 @@
 }
 
 
-.header_searchForm.searchForm>input {
+.header.search__form>input {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 5px 5px #00000029;
     border: 2px solid #707070;
@@ -157,7 +157,7 @@
     .dropdown__menu:hover .dropdown__menu.content {display: block;}
     
 
-    .header__container__second {
+    .management__container {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -166,17 +166,17 @@
         padding-bottom: 40px;
     }
 
-    .header__button.addProject {
+    .header__button.add__project {
         height: 2.5em;
         width: 8em;
     }
     
-    .header__searchBar.searchBar {
+    .header.search__bar {
         margin-bottom: 40px;
         height: 3em;
     }
 
-    .header_searchForm.searchForm>input {
+    .header.search__form>input {
         width: 22em;
         padding-left: 10px;
         padding-right: 10px;
