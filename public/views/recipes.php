@@ -58,7 +58,8 @@
             </div>
         </div>
         <div class="management__container">
-            <button class="header__button add__project"  onClick="javascript:window.open('./form', '_blank');">
+           <button class="header__button add__project">
+<!--           <button class="header__button add__project"  onClick="javascript:window.open('./form', '_blank');">-->
                 <i class="fas fa-plus"></i>
                 Add
             </button>

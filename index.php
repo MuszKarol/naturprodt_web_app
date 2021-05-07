@@ -13,6 +13,7 @@ Routing::get('map', 'DefaultController');
 Routing::get('recipes', 'DefaultController');
 Routing::get('register', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('addProduct', 'ProductController');
 
 Routing::run($path);
 

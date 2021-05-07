@@ -11,6 +11,7 @@
 	border-radius: 11px;
     justify-self: center;
     height: 50vh;
+    width: 100%;
 }
 
 .product.product__overview {

@@ -74,10 +74,10 @@
         <div class="products__container">
             <div id="product__1">
                 <div class="product product__overview">
-                    <h2>Title</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat molestiae voluptatibus ut distinctio aliquid modi ab odit iusto est delectus iste et, excepturi magni eum, voluptate enim recusandae dolorum at.</p>
+                    <h2><?= $product->getTitle(); ?></h2>
+                    <p><?= $product->getDescription(); ?></p>
                 </div>
-                <img src="public/img/uploads/strawberries.jpg">
+                <img src="public/uploads/<?= $product->getImage(); ?>">
                 <div class="product social__section">
                     <ul class="product__list social__list">
                         <li class="social__item icon">
