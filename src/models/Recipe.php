@@ -3,14 +3,14 @@
 
 class Recipe {
     private $title;
-    private $description;
+    private $recipe;
     private $image;
 
 
-    public function __construct($title, $description, $image)
+    public function __construct($title, $recipe, $image)
     {
         $this->title = $title;
-        $this->description = $description;
+        $this->recipe = $recipe;
         $this->image = $image;
     }
 
@@ -27,15 +27,15 @@ class Recipe {
     }
 
 
-    public function getDescription(): string
+    public function getRecipe(): string
     {
-        return $this->description;
+        return $this->recipe;
     }
 
 
-    public function setDescription(string $description)
+    public function setRecipe(string $recipe)
     {
-        $this->description = $description;
+        $this->recipe = $recipe;
     }
 
 

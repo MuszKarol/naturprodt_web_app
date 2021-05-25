@@ -59,7 +59,7 @@
     </div>
 </header>
 <div class="form__container">
-    <form class="form__container form" action="addProduct" method="POST" ENCTYPE="multipart/form-data">
+    <form class="form__container form" action="addRecipe" method="POST" ENCTYPE="multipart/form-data">
         <div class="messages" >
             <?php
             if(isset($messages)){
@@ -69,22 +69,13 @@
             }
             ?>
         </div>
-<!--        <label for="title">Choose</label>-->
-<!--        <select name="choose" id="choose">-->
-<!--            <option value="product">Product</option>-->
-<!--            <option value="recipe">Recipe</option>-->
-<!--        </select>-->
-<!--        <div>-->
-<!--            <label>Choose</label>-->
-<!--            <input name="choose" type="text">-->
-<!--        </div>-->
         <div>
             <label>Title</label>
             <input name="title" type="text">
         </div>
         <div>
-            <label>Description</label>
-            <textarea name="description" type="text" rows="5"></textarea>
+            <label>Recipe</label>
+            <textarea name="recipe" type="text" rows="7"></textarea>
         </div>
         <div>
             <label>Choose image</label>

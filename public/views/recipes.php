@@ -58,8 +58,7 @@
             </div>
         </div>
         <div class="management__container">
-           <button class="header__button add__project">
-<!--           <button class="header__button add__project"  onClick="javascript:window.open('./form', '_blank');">-->
+           <button class="header__button add__project"  onClick="javascript:window.open('./recipeForm', '_blank');">
                 <i class="fas fa-plus"></i>
                 Add
             </button>
@@ -109,11 +108,11 @@
                 </div>
             </div>
             <div id="recipe__5">
-                <img src="public/img/uploads/strawberries.jpg">
+                <img src="public/uploads/<?= $recipe->getImage(); ?>">
                 <div class="recipe recipe__overview">
-                    <h2>Title</h2>
+                    <h2><?= $recipe->getTitle(); ?></h2>
                     <div class="recipe__overview text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.</p>
+                        <p><?= $recipe->getRecipe(); ?></p>
                     </div>                
                 </div>
             </div>

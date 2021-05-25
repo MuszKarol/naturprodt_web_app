@@ -1,9 +1,9 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../models/Product.php';
+require_once __DIR__.'/../models/Recipe.php';
 
-class ProductController extends AppController {
+class RecipeController extends AppController {
 
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
@@ -11,7 +11,7 @@ class ProductController extends AppController {
 
     private $messages = [];
 
-    public function addProduct() {
+    public function addRecipe() {
 
         if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
 
@@ -20,13 +20,12 @@ class ProductController extends AppController {
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
+            $recipe = new Recipe($_POST['title'], $_POST['recipe'], $_FILES['file']['name']);
 
-            $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name']);
-
-            return $this->render('products', ['messages'=> $this->messages, 'product'=> $product]);
+            return $this->render('recipes', ['messages'=> $this->messages, 'recipe'=> $recipe]);
         }
 
-        $this->render('productForm', ['messages'=> $this->messages]);
+        $this->render('recipeForm', ['messages'=> $this->messages]);
     }
 
 
@@ -43,6 +42,4 @@ class ProductController extends AppController {
 
         return true;
     }
-
-
 }
