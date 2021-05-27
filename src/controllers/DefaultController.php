@@ -7,13 +7,6 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function products() {
-        $this->render('products');
-    }
-
-    public function recipes() {
-        $this->render('recipes');
-    }
 
     public function register() {
         $this->render('register');

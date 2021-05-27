@@ -30,6 +30,28 @@ class RecipeRepository extends Repository
         );
     }
 
+    public function getRecipes(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM recipes;
+        ');
+
+        $stmt->execute();
+        $recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($recipes as $recipe){
+            $result[] = new Recipe(
+                $recipe['title'],
+                $recipe['content'],
+                $recipe['image_title']
+            );
+        }
+
+        return $result;
+    }
+
     public function addRecipe(Recipe $recipe): void {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO recipes(title, content, image_title, id_user)

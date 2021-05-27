@@ -71,51 +71,17 @@
     </header>
     <section class="recipes">
         <section class="recipes__container">
-            <div id="recipe__1">
-                <img src="public/img/uploads/strawberries.jpg">
-                <div class="recipe recipe__overview">
-                    <h2>Title</h2>
-                    <div class="recipe__overview text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.</p>
-                    </div>
-                </div>
-            </div>
-            <div id="recipe__2">
-                <img src="public/img/uploads/strawberries.jpg">
-                <div class="recipe recipe__overview">
-                    <h2>Title</h2>
-                    <div class="recipe__overview text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.</p>
-                    </div>                
-                </div>
-            </div>
-            <div id="recipe__3">
-                <img src="public/img/uploads/strawberries.jpg">
-                <div class="recipe recipe__overview">
-                    <h2>Title</h2>
-                    <div class="recipe__overview text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.</p>
-                    </div>            
-                </div>
-            </div>
-            <div id="recipe__4">
-                <img src="public/img/uploads/strawberries.jpg">
-                <div class="recipe recipe__overview">
-                    <h2>Title</h2>
-                    <div class="recipe__overview text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat omnis harum necessitatibus aspernatur officia cumque quisquam possimus tempora, ab consectetur at error nihil veniam mollitia laudantium, suscipit ipsa illum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam ratione quasi nemo quo magnam nulla voluptatum dolorum cumque ipsum. Explicabo recusandae numquam nostrum, enim perferendis ea sapiente sint. Hic.</p>
-                    </div>                
-                </div>
-            </div>
-            <div id="recipe__5">
+            <?php foreach ($recipes as $recipe): ?>
+            <div>
                 <img src="public/uploads/<?= $recipe->getImage(); ?>">
                 <div class="recipe recipe__overview">
                     <h2><?= $recipe->getTitle(); ?></h2>
                     <div class="recipe__overview text">
                         <p><?= $recipe->getRecipe(); ?></p>
-                    </div>                
+                    </div>
                 </div>
             </div>
+            <?php endforeach; ?>
         </section>
     </section>
 </body>

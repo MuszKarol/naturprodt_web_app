@@ -20,6 +20,11 @@ class ProductController extends AppController {
         $this->productRepository = new ProductRepository();
     }
 
+    public function products()
+    {
+        $this->render('products', ['messages'=> $this->messages,
+                                            'products'=> $this->productRepository->getProducts()]);
+    }
 
     public function addProduct() {
 
@@ -34,8 +39,8 @@ class ProductController extends AppController {
             $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['link']);
             $this->productRepository->addProduct($product);
 
-
-            return $this->render('products', ['messages'=> $this->messages, 'product'=> $product]);
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/products");
         }
 
         $this->render('productForm', ['messages'=> $this->messages]);

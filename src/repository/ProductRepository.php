@@ -25,10 +25,34 @@ class ProductRepository extends Repository
 
         return new Product(
             $product['title'],
-            $product['$description'],
+            $product['description'],
             $product['image_title'],
             $product['link']
         );
+    }
+
+
+    public function getProducts(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM products;
+        ');
+
+        $stmt->execute();
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($products as $product){
+            $result[] = new Product(
+                $product['title'],
+                $product['description'],
+                $product['image_title'],
+                $product['link']
+            );
+        }
+
+        return $result;
     }
 
     public function addProduct(Product $product): void {

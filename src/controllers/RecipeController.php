@@ -19,6 +19,11 @@ class RecipeController extends AppController {
         $this->recipeRepository = new RecipeRepository();
     }
 
+    public function recipes()
+    {
+        $this->render('recipes', ['messages'=> $this->messages,
+                                            'recipes'=> $this->recipeRepository->getRecipeS()]);
+    }
 
 
     public function addRecipe() {
@@ -33,7 +38,8 @@ class RecipeController extends AppController {
             $recipe = new Recipe($_POST['title'], $_POST['recipe'], $_FILES['file']['name']);
             $this->recipeRepository->addRecipe($recipe);
 
-            return $this->render('recipes', ['messages'=> $this->messages, 'recipe'=> $recipe]);
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/recipes");
         }
 
         $this->render('recipeForm', ['messages'=> $this->messages]);
