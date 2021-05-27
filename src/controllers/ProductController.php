@@ -32,7 +32,7 @@ class ProductController extends AppController {
 
 
             $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['link']);
-            $this->productRepository->addProject($product);
+            $this->productRepository->addProduct($product);
 
 
             return $this->render('products', ['messages'=> $this->messages, 'product'=> $product]);

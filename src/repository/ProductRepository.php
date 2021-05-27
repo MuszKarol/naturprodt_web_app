@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Repository.php';
-require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../models/Product.php';
 
 class ProductRepository extends Repository
 {
@@ -31,7 +31,7 @@ class ProductRepository extends Repository
         );
     }
 
-    public function addProject(Product $product): void {
+    public function addProduct(Product $product): void {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO products(title, description, link, image_title, user_id)
             VALUES (?, ?, ?, ?, ?);

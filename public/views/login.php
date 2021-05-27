@@ -23,7 +23,7 @@
                 <input name="password" type="password" placeholder="password">
                 <div class="menu buttons" >
                     <button type="submit">LOGIN</button>
-                    <button onClick="javascript:window.open('./register', '_blank');">REGISTER</button>
+                    <button onClick="javascript:window.open('./addUser', '_blank');">REGISTER</button>
                 </div>
             </form>
         </div>

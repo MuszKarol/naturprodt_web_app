@@ -11,9 +11,10 @@ Routing::get('recipes', 'DefaultController');
 Routing::get('account', 'DefaultController');
 Routing::get('productForm', 'DefaultController');
 Routing::get('recipeForm', 'DefaultController');
-Routing::get('map', 'DefaultController');
 Routing::get('register', 'DefaultController');
+Routing::get('map', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('addUser', 'UserController');
 Routing::post('addProduct', 'ProductController');
 Routing::post('addRecipe', 'RecipeController');
 

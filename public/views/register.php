@@ -13,22 +13,31 @@
 </head>
 <body>
     <div class="form__container">
-        <form class="form__container form" action="#">
+        <form class="form__container form" action="addUser" method="POST" ENCTYPE="multipart/form-data">
+            <div class="messages" >
+                <?php
+                if(isset($messages)){
+                    foreach((array) $messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
+            </div>
             <div>
                 <label for="title">Name</label>
-                <input type="text" id="name" name="name">
+                <input type="text" name="name">
             </div>
             <div>
-                <label for="description">Surname</label>
-                <input type="text" id="sname" name="sname">
+                <label>Surname</label>
+                <input type="text" name="surname">
             </div>
             <div>
-                <label for="description">Email</label>
-                <input type="text" id="email" name="email">
+                <label>Email</label>
+                <input type="text" name="email">
             </div>
             <div>
-                <label for="description">Password</label>
-                <input type="password" id="pass" name="pass">
+                <label>Password</label>
+                <input type="password" name="password">
             </div>
             <input type="submit" value="Submit">
         </form>
