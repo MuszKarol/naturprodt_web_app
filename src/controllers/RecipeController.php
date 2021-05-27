@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Recipe.php';
+require_once __DIR__.'/../repository/RecipeRepository.php';
 
 class RecipeController extends AppController {
 
@@ -9,7 +10,16 @@ class RecipeController extends AppController {
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
+    private $recipeRepository;
     private $messages = [];
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->recipeRepository = new RecipeRepository();
+    }
+
+
 
     public function addRecipe() {
 
@@ -21,6 +31,7 @@ class RecipeController extends AppController {
             );
 
             $recipe = new Recipe($_POST['title'], $_POST['recipe'], $_FILES['file']['name']);
+            $this->recipeRepository->addRecipe($recipe);
 
             return $this->render('recipes', ['messages'=> $this->messages, 'recipe'=> $recipe]);
         }
