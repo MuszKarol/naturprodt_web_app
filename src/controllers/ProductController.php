@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Product.php';
+require_once __DIR__.'/../repository/ProductRepository.php';
 
 class ProductController extends AppController {
 
@@ -10,6 +11,15 @@ class ProductController extends AppController {
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
     private $messages = [];
+    private  $productRepository;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->productRepository = new ProductRepository();
+    }
+
 
     public function addProduct() {
 
@@ -21,7 +31,9 @@ class ProductController extends AppController {
             );
 
 
-            $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name']);
+            $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['link']);
+            $this->productRepository->addProject($product);
+
 
             return $this->render('products', ['messages'=> $this->messages, 'product'=> $product]);
         }

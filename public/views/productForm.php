@@ -78,6 +78,10 @@
             <textarea name="description" type="text" rows="5"></textarea>
         </div>
         <div>
+            <label>Link</label>
+            <input name="link" type="text">
+        </div>
+        <div>
             <label>Choose image</label>
             <input type="file" name="file">
         </div>

@@ -185,7 +185,7 @@
                 <div class="product social__section">
                     <ul class="product__list social__list">
                         <li class="social__item icon">
-                            <a onclick="location.href='http://www.google.com'">
+                            <a onclick="">
                                 <i class="fas fa-heart"> 121</i>
                             </a>
                         <li class="social__item icon">
@@ -193,7 +193,7 @@
                                 <i class="fas fa-minus-square"> 50</i>
                             </a>
                         <li class="social__item icon">
-                            <a href="https://allegro.pl/">
+                            <a onclick="location.href='<?= $product->getLink(); ?>'">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         <li class="social__item icon">
