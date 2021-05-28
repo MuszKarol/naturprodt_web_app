@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d8d0f3c8c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>Register - naturprodt</title>
 </head>
 <body>
     <div class="form__container">
-        <form class="form__container form" action="addUser" method="POST" ENCTYPE="multipart/form-data">
+        <form id='form' class="form__container form" action="addUser" method="POST" ENCTYPE="multipart/form-data">
             <div class="messages" >
                 <?php
                 if(isset($messages))
@@ -35,13 +36,17 @@
             </div>
             <div>
                 <label>Email</label>
-                <input type="text" name="email">
+                <input id='email' type="text" name="email">
             </div>
             <div>
                 <label>Password</label>
-                <input type="password" name="password">
+                <input id='pass' type="password">
             </div>
-            <input type="submit" value="Submit">
+            <div>
+                <label>Confirm password</label>
+                <input id='confirm_pass' type="password" name="password">
+            </div>
+            <input type="submit" value="Submit" onclick="window.close();">
         </form>
     </div>
 </body>
