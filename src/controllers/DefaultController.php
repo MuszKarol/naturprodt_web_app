@@ -7,7 +7,6 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-
     public function register() {
         $this->render('register');
     }
@@ -24,7 +23,4 @@ class DefaultController extends AppController {
         $this->render('recipeForm');
     }
 
-    public function account() {
-        $this->render('account');
-    }
 }

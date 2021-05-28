@@ -29,13 +29,18 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages'=>'Incorrect password!']);
         }
 
+
+        $_SESSION['tmp'] = serialize($user);
+        //session_write_close();
+
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/products");
     }
 
     public function logout(){
-        //logout button in user settings
+        session_destroy();
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/products");
+        header("Location: {$url}");
     }
 }

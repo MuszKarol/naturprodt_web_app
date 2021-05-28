@@ -61,25 +61,23 @@
 
     <div class="account__info">
         <div class="submit__button logout">
-            <button onclick="">Logout</button>
+<!--            <button onClick="javascript:window.open('./logout');">Logout</button>-->
+            <button onClick="javascript:window.location.replace('./logout');">Logout</button>
         </div>
         <div class="account__info info">
             <table class="account__info table">
                 <tr>
-                    <td>nick</td>
-                    <td>example</td>
-                </tr>
-                <tr>
                     <td>e-mail</td>
-                    <td>example@example.com</td>
+                    <td><?= $user->getEmail(); ?></td>
                 </tr>
                 <tr>
-                    <td>likes</td>
-                    <td>5</td>
+                    <td>namel</td>
+                    <td><?= $user->getName(); ?></td>
                 </tr>
                 <tr>
-                    <td>dislikes</td>
-                    <td>2</td>
+                    <td>surname</td>
+                    <td>-</td>
+                    <td><?= $user->getSurname(); ?></td>
                 </tr>
             </table>
         </div>

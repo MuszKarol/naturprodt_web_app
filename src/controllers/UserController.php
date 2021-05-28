@@ -26,4 +26,10 @@ class UserController extends AppController
             $this->render('register', ['messages'=> $this->messages]);
         }
     }
+
+    public function account() {
+        $user = unserialize($_SESSION['tmp']);
+        $this->render('account', ['user'=>$user]);
+    }
+
 }

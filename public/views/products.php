@@ -90,7 +90,7 @@
                                 <i class="fas fa-minus-square"> 50</i>
                             </a>
                         <li class="social__item icon">
-                            <a onclick="location.href='<?= $product->getLink(); ?>'">
+                            <a onclick="javascript:window.open('<?= $product->getLink(); ?>', '_blank');">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         <li class="social__item icon">
