@@ -12,15 +12,24 @@ class DefaultController extends AppController {
     }
 
     public function map() {
-        $this->render('map');
+        if(!isset($_SESSION['user']))
+            header("Location: http://$_SERVER[HTTP_HOST]");
+        else
+            $this->render('map');
     }
 
     public function productForm() {
-        $this->render('productForm');
+        if(!isset($_SESSION['user']))
+            header("Location: http://$_SERVER[HTTP_HOST]");
+        else
+            $this->render('productForm');
     }
 
     public function recipeForm() {
-        $this->render('recipeForm');
+        if(!isset($_SESSION['user']))
+            header("Location: http://$_SERVER[HTTP_HOST]");
+        else
+            $this->render('recipeForm');
     }
 
 }

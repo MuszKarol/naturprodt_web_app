@@ -20,15 +20,18 @@ class UserController extends AppController
         if($this->isPost()) {
             $user = new User($_POST['email'], md5($_POST['password']), $_POST['name'], $_POST['surname']);
             $this->userRepository->addUser($user);
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}");
+            header("Location: http://$_SERVER[HTTP_HOST]");
         }else {
             $this->render('register', ['messages'=> $this->messages]);
         }
     }
 
-    public function account() {
-        $user = unserialize($_SESSION['tmp']);
+    public function account()
+    {
+        if(!isset($_SESSION['user']))
+            header("Location: http://$_SERVER[HTTP_HOST]");
+
+        $user = $_SESSION['user'];
         $this->render('account', ['user'=>$user]);
     }
 

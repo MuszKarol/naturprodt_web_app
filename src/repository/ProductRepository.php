@@ -55,23 +55,32 @@ class ProductRepository extends Repository
         return $result;
     }
 
-    public function addProduct(Product $product): void {
-        $stmt = $this->database->connect()->prepare('
+    public function addProduct(Product $product): void
+    {
+        $pdo = $this->database->connect();
+        $stmt = $pdo->prepare('
             INSERT INTO products(title, description, link, image_title, user_id)
             VALUES (?, ?, ?, ?, ?);
         ');
 
-        //!!!!!!!!!!!
-        //https://youtu.be/pJhTeQtdSHE?t=1536
-        $user_id = 1;
+        $pdo->beginTransaction();
 
-        $stmt->execute([
-            $product->getTitle(),
-            $product->getDescription(),
-            $product->getLink(),
-            $product->getImage(),
-            $user_id
-        ]);
+        try
+        {
+            $stmt->execute([
+                $product->getTitle(),
+                $product->getDescription(),
+                $product->getLink(),
+                $product->getImage(),
+                $this->getIdUser($_SESSION['user']->getEmail())
+            ]);
+
+            $pdo->commit();
+        }
+        catch (Exception $e)
+        {
+            $pdo->rollBack();
+        }
     }
 
 }

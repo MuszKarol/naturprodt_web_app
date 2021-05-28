@@ -12,8 +12,10 @@
             <form class="login" action="login" method="post">
                 <div class="messages">
                     <?php
-                    if(isset($messages)){
-                        foreach((array) $messages as $message) {
+                    if(isset($messages))
+                    {
+                        foreach((array) $messages as $message)
+                        {
                             echo $message;
                         }
                     }
@@ -23,7 +25,7 @@
                 <input name="password" type="password" placeholder="password">
                 <div class="menu buttons" >
                     <button type="submit">LOGIN</button>
-                    <button onClick="javascript:window.open('./addUser', '_blank');">REGISTER</button>
+                    <button onClick="javascript:window.open('./register', '_blank');">REGISTER</button>
                 </div>
             </form>
         </div>

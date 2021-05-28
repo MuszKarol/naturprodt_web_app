@@ -16,8 +16,10 @@
         <form class="form__container form" action="addUser" method="POST" ENCTYPE="multipart/form-data">
             <div class="messages" >
                 <?php
-                if(isset($messages)){
-                    foreach((array) $messages as $message) {
+                if(isset($messages))
+                {
+                    foreach((array) $messages as $message)
+                    {
                         echo $message;
                     }
                 }

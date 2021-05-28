@@ -41,7 +41,8 @@ class RecipeRepository extends Repository
         $stmt->execute();
         $recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($recipes as $recipe){
+        foreach ($recipes as $recipe)
+        {
             $result[] = new Recipe(
                 $recipe['title'],
                 $recipe['content'],
@@ -52,22 +53,31 @@ class RecipeRepository extends Repository
         return $result;
     }
 
-    public function addRecipe(Recipe $recipe): void {
-        $stmt = $this->database->connect()->prepare('
+    public function addRecipe(Recipe $recipe): void
+    {
+        $pdo = $this->database->connect();
+        $stmt = $pdo->prepare('
             INSERT INTO recipes(title, content, image_title, id_user)
             VALUES (?, ?, ?, ?);
         ');
 
-        //!!!!!!!!!!!
-        //https://youtu.be/pJhTeQtdSHE?t=1536
-        $user_id = 1;
+        $pdo->beginTransaction();
 
-        $stmt->execute([
-            $recipe->getTitle(),
-            $recipe->getRecipe(),
-            $recipe->getImage(),
-            $user_id
-        ]);
+        try
+        {
+            $stmt->execute([
+                $recipe->getTitle(),
+                $recipe->getRecipe(),
+                $recipe->getImage(),
+                $this->getIdUser($_SESSION['user']->getEmail())
+            ]);
+
+            $pdo->commit();
+        }
+        catch (Exception $e)
+        {
+            $pdo->rollBack();
+        }
     }
 
 }

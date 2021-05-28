@@ -35,33 +35,54 @@ class UserRepository extends Repository
 
     public function addUser(User $user): void
     {
-        $stmtUD = $this->database->connect()->prepare('
+        $pdo = $this->database->connect();
+        $stmtUD = $pdo->prepare('
             INSERT INTO users_details(name, surname)
             VALUES (?, ?);
         ');
 
-        $stmtUD->execute([
-            $user->getName(),
-            $user->getSurname()
-        ]);
+        $pdo->beginTransaction();
+
+        try
+        {
+            $stmtUD->execute([
+                $user->getName(),
+                $user->getSurname()
+            ]);
+
+            $pdo->commit();
+        }
+        catch (Exception $e)
+        {
+            $pdo->rollBack();
+        }
+
 
         $id = $this->getUserDetailsId($user->getName(), $user->getSurname());
 
-        $stmtU = $this->database->connect()->prepare('
-            INSERT INTO users(email, password, enabled, salt, id_user_details)
-            VALUES (?, ?, ?, ?, ?);
+
+        $stmtU = $pdo->prepare('
+            INSERT INTO users(email, password, id_user_details)
+            VALUES (?, ?, ?);
         ');
 
-        $enabled = 1;
-        $salt = 1;
+        $pdo->beginTransaction();
 
-        $stmtU->execute([
-            $user->getEmail(),
-            $user->getPassword(),
-            $enabled,
-            $salt,
-            $id
-        ]);
+        try
+        {
+            $stmtU->execute([
+                $user->getEmail(),
+                $user->getPassword(),
+                $id
+            ]);
+
+            $pdo->commit();
+        }
+        catch (Exception $e)
+        {
+            $pdo->rollBack();
+        }
+
     }
 
 
@@ -82,5 +103,6 @@ class UserRepository extends Repository
 
         return $data['id'];
     }
+
 
 }

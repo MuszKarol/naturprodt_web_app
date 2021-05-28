@@ -22,38 +22,52 @@ class ProductController extends AppController {
 
     public function products()
     {
-        $this->render('products', ['messages'=> $this->messages,
-                                            'products'=> $this->productRepository->getProducts()]);
+        if(isset($_SESSION['user']))
+            $this->render('products', ['messages'=> $this->messages,
+                                                'products'=> $this->productRepository->getProducts()]);
+        else
+            header("Location: http://$_SERVER[HTTP_HOST]");
     }
 
-    public function addProduct() {
+    public function addProduct()
+    {
+        if(!isset($_SESSION['user']))
+            header("Location: http://$_SERVER[HTTP_HOST]");
 
-        if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
+        else
+        {
+            if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
+            {
 
-            move_uploaded_file(
-                $_FILES['file']['tmp_name'],
-                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
-            );
+                move_uploaded_file(
+                    $_FILES['file']['tmp_name'],
+                    dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
+                );
 
 
-            $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['link']);
-            $this->productRepository->addProduct($product);
+                $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['link']);
+                $this->productRepository->addProduct($product);
 
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/products");
+                header("Location: http://$_SERVER[HTTP_HOST]/products");
+            }
+            else
+            {
+                $this->render('productForm', ['messages'=> $this->messages]);
+            }
         }
-
-        $this->render('productForm', ['messages'=> $this->messages]);
     }
 
 
-    private function validate(array $file): bool {
-        if($file['size'] > self::MAX_FILE_SIZE) {
+    private function validate(array $file): bool
+    {
+        if($file['size'] > self::MAX_FILE_SIZE)
+        {
             $this->messages[] = 'File is too large for destination file system.';
             return false;
         }
 
-        if(!isset($file['type']) && !in_array($file['type'], self::SUPPORTED_TYPES)) {
+        if(!isset($file['type']) && !in_array($file['type'], self::SUPPORTED_TYPES))
+        {
             $this->messages[] = 'File type is not supported!';
             return false;
         }

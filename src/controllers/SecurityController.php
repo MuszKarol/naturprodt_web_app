@@ -4,8 +4,8 @@ require_once 'AppController.php';
 require_once __DIR__.'/../repository/UserRepository.php';
 require_once __DIR__.'/../models/User.php';
 
-class SecurityController extends AppController {
-
+class SecurityController extends AppController
+{
     public function login() {
         $userRepository = new UserRepository();
 
@@ -29,10 +29,8 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages'=>'Incorrect password!']);
         }
 
-
-        $_SESSION['tmp'] = serialize($user);
-        //session_write_close();
-
+        $_SESSION['user'] = $user;
+        session_write_close();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/products");
@@ -40,6 +38,7 @@ class SecurityController extends AppController {
 
     public function logout(){
         session_destroy();
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}");
     }
