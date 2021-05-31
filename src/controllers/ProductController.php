@@ -22,38 +22,34 @@ class ProductController extends AppController {
 
     public function products()
     {
-        if(isset($_SESSION['user']))
-            $this->render('products', ['messages'=> $this->messages,
-                                                'products'=> $this->productRepository->getProducts()]);
-        else
-            header("Location: http://$_SERVER[HTTP_HOST]");
+        parent::sessionCheck();
+
+        $this->render('products', ['messages'=> $this->messages,
+                        'products'=> $this->productRepository->getProducts()]);
     }
 
     public function addProduct()
     {
-        if(!isset($_SESSION['user']))
-            header("Location: http://$_SERVER[HTTP_HOST]");
+        parent::sessionCheck();
+
+        if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
+        {
+
+            move_uploaded_file(
+                $_FILES['file']['tmp_name'],
+                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
+            );
+
+
+            $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['link']);
+            $this->productRepository->addProduct($product);
+
+            header("Location: http://$_SERVER[HTTP_HOST]/products");
+        }
 
         else
         {
-            if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
-            {
-
-                move_uploaded_file(
-                    $_FILES['file']['tmp_name'],
-                    dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
-                );
-
-
-                $product = new Product($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['link']);
-                $this->productRepository->addProduct($product);
-
-                header("Location: http://$_SERVER[HTTP_HOST]/products");
-            }
-            else
-            {
-                $this->render('productForm', ['messages'=> $this->messages]);
-            }
+            $this->render('productForm', ['messages'=> $this->messages]);
         }
     }
 

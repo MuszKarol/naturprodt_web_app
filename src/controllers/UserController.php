@@ -28,8 +28,7 @@ class UserController extends AppController
 
     public function account()
     {
-        if(!isset($_SESSION['user']))
-            header("Location: http://$_SERVER[HTTP_HOST]");
+        parent::sessionCheck();
 
         $user = $_SESSION['user'];
         $this->render('account', ['user'=>$user]);

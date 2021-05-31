@@ -32,4 +32,10 @@ class AppController
         }
         print $output;
     }
+
+    protected function sessionCheck(): void
+    {
+        if(!isset($_SESSION['user']))
+            header("Location: http://$_SERVER[HTTP_HOST]");
+    }
 }

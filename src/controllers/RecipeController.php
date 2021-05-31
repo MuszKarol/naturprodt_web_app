@@ -21,40 +21,33 @@ class RecipeController extends AppController {
 
     public function recipes()
     {
-        if(!isset($_SESSION['user']))
-            header("Location: http://$_SERVER[HTTP_HOST]");
+        parent::sessionCheck();
 
-        else
-        {
-            $this->render('recipes', ['messages'=> $this->messages,
-                                                'recipes'=> $this->recipeRepository->getRecipeS()]);
-        }
+        $this->render('recipes', ['messages'=> $this->messages,
+                                            'recipes'=> $this->recipeRepository->getRecipeS()]);
     }
 
     public function addRecipe()
     {
-        if(!isset($_SESSION['user']))
-            header("Location: http://$_SERVER[HTTP_HOST]");
+        parent::sessionCheck();
+
+        if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
+        {
+
+            move_uploaded_file(
+                $_FILES['file']['tmp_name'],
+                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
+            );
+
+            $recipe = new Recipe($_POST['title'], $_POST['recipe'], $_FILES['file']['name']);
+            $this->recipeRepository->addRecipe($recipe);
+
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/recipes");
+        }
 
         else
-        {
-            if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
-            {
-
-                move_uploaded_file(
-                    $_FILES['file']['tmp_name'],
-                    dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
-                );
-
-                $recipe = new Recipe($_POST['title'], $_POST['recipe'], $_FILES['file']['name']);
-                $this->recipeRepository->addRecipe($recipe);
-
-                $url = "http://$_SERVER[HTTP_HOST]";
-                header("Location: {$url}/recipes");
-            }
-            else
-                $this->render('recipeForm', ['messages'=> $this->messages]);
-        }
+            $this->render('recipeForm', ['messages'=> $this->messages]);
     }
 
 

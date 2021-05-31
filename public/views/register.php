@@ -46,7 +46,7 @@
                 <label>Confirm password</label>
                 <input id='confirm_pass' type="password" name="password">
             </div>
-            <input type="submit" value="Submit" onclick="window.close();">
+            <input type="submit" value="Submit">
         </form>
     </div>
 </body>
