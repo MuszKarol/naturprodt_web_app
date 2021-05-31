@@ -76,7 +76,6 @@
                 </tr>
                 <tr>
                     <td>surname</td>
-                    <td>-</td>
                     <td><?= $user->getSurname(); ?></td>
                 </tr>
             </table>

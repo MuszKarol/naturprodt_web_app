@@ -20,5 +20,7 @@ Routing::post('login', 'SecurityController');
 Routing::post('addUser', 'UserController');
 Routing::post('addProduct', 'ProductController');
 Routing::post('addRecipe', 'RecipeController');
+Routing::post('searchProducts', 'ProductController');
+Routing::post('searchRecipes', 'RecipeController');
 
 Routing::run($path);

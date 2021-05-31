@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d8d0f3c8c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/searchRecipes.js" defer></script>
     <title>Bio-Recipes - naturprodt</title>
 </head>
 
@@ -63,14 +64,12 @@
                 Add
             </button>
             <div class="header search__bar">
-                <form class="header search__form">
                     <input placeholder="search products">
-                </form>
             </div>
         </div>
     </header>
     <section class="recipes">
-        <section class="recipes__container">
+        <div class="recipes__container">
             <?php foreach ($recipes as $recipe): ?>
             <div>
                 <img src="public/uploads/<?= $recipe->getImage(); ?>">
@@ -82,8 +81,20 @@
                 </div>
             </div>
             <?php endforeach; ?>
-        </section>
+        </div>
     </section>
 </body>
+
+<template id="recipe-template">
+    <div id="">
+        <img src="">
+        <div class="recipe recipe__overview">
+            <h2></h2>
+            <div class="recipe__overview text">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</template>
 
 </html>

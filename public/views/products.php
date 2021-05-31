@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d8d0f3c8c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/searchProducts.js" defer></script>
     <title>Products - naturprodt</title>
 </head>
 
@@ -63,9 +64,7 @@
                 Add
             </button>
             <div class="header search__bar">
-                <form class="header search__form">
                     <input placeholder="search products">
-                </form>
             </div>
         </div>
     </header>
@@ -103,5 +102,34 @@
         </div>
     </div>
 </body>
+
+<template id="product-template">
+    <div id="">
+        <div class="product product__overview">
+            <h2></h2>
+            <p></p>
+        </div>
+        <img src="">
+        <div class="product social__section">
+            <ul class="product__list social__list">
+                <li class="social__item icon">
+                    <a onclick="">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                <li class="social__item icon">
+                    <a onclick="">
+                        <i class="fas fa-minus-square"></i>
+                    </a>
+                <li class="social__item icon">
+                    <a id="shop" onclick="">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                <li class="social__item icon">
+                    <a>
+                        <i class="fas fa-share-alt"></i>
+                    </a>
+        </div>
+    </div>
+</template>
 
 </html>

@@ -30,6 +30,21 @@ class RecipeRepository extends Repository
         );
     }
 
+    public function getRecipesByTitleAndDescription(string $searchString): array
+    {
+        $searchString = '%'.strtolower($searchString).'%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM recipes
+            WHERE LOWER(title) LIKE :search OR LOWER(content) LIKE :search;
+        ');
+
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getRecipes(): array
     {
         $result = [];
