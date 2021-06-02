@@ -63,7 +63,10 @@ class ProductRepository extends Repository
                 $product['title'],
                 $product['description'],
                 $product['image_title'],
-                $product['link']
+                $product['link'],
+                $product['likes'],
+                $product['dislikes'],
+                $product['id']
             );
         }
 
@@ -96,6 +99,26 @@ class ProductRepository extends Repository
         {
             $pdo->rollBack();
         }
+    }
+
+    public function like(int $id)
+    {
+        $stmt = $this->database->connect()->prepare(
+            'UPDATE products SET likes = likes + 1 WHERE id = :id;'
+        );
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    public function dislike(int $id)
+    {
+        $stmt = $this->database->connect()->prepare(
+            'UPDATE products SET dislikes = dislikes + 1 WHERE id = :id;'
+        );
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 
 }

@@ -69,6 +69,18 @@ class ProductController extends AppController {
         }
     }
 
+    public function like(int $id)
+    {
+        $this->productRepository->like($id);
+        http_response_code(200);
+    }
+
+    public function dislike(int $id)
+    {
+        $this->productRepository->dislike($id);
+        http_response_code(200);
+    }
+
 
     private function validate(array $file): bool
     {

@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d8d0f3c8c2.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/searchProducts.js" defer></script>
+    <script type="text/javascript" src="./public/js/statistics.js" defer></script>
     <title>Products - naturprodt</title>
 </head>
 
@@ -72,7 +73,7 @@
     <div class="products">
         <div class="products__container">
             <?php foreach ($products as $product): ?>
-            <div id="product">
+            <div id="<?= $product->getId(); ?>">
                 <div class="product product__overview">
                     <h2><?= $product->getTitle(); ?></h2>
                     <p><?= $product->getDescription(); ?></p>
@@ -82,11 +83,11 @@
                     <ul class="product__list social__list">
                         <li class="social__item icon">
                             <a onclick="">
-                                <i class="fas fa-heart"> 121</i>
+                                <i class="fas fa-heart"><?= $product->getLike(); ?></i>
                             </a>
                         <li class="social__item icon">
                             <a onclick="">
-                                <i class="fas fa-minus-square"> 50</i>
+                                <i class="fas fa-minus-square"><?= $product->getDislike(); ?></i>
                             </a>
                         <li class="social__item icon">
                             <a onclick="javascript:window.open('<?= $product->getLink(); ?>', '_blank');">
