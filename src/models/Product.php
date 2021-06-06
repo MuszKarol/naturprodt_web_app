@@ -1,7 +1,8 @@
 <?php
 
 
-class Product {
+class Product
+{
     private $id;
     private $title;
     private $description;

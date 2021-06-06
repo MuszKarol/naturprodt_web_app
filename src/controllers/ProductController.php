@@ -4,8 +4,8 @@ require_once 'AppController.php';
 require_once __DIR__.'/../models/Product.php';
 require_once __DIR__.'/../repository/ProductRepository.php';
 
-class ProductController extends AppController {
-
+class ProductController extends AppController
+{
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';

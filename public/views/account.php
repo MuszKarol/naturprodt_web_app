@@ -61,7 +61,6 @@
 
     <div class="account__info">
         <div class="submit__button logout">
-<!--            <button onClick="javascript:window.open('./logout');">Logout</button>-->
             <button onClick="javascript:window.location.replace('./logout');">Logout</button>
         </div>
         <div class="account__info info">
@@ -80,23 +79,6 @@
                 </tr>
             </table>
         </div>
-<!--        <div class="account_info settings">-->
-<!--            <form class="account_info settings__form" action="#">-->
-<!--                <div class="settings__form item">-->
-<!--                    <label>Nick</label> <input type="text" name="nick"/>-->
-<!--                </div>-->
-<!--                <div class="settings__form item">-->
-<!--                    <label>Email</label> <input type="text" name="email"/>-->
-<!--                </div>-->
-<!--                <div class="settings__form item">-->
-<!--                    <label>Password</label> <input type="text" name="email"/>-->
-<!--                </div>-->
-<!--                <div class="settings__form item">-->
-<!--                    <button type="submit">Accept changes</button>-->
-<!--                </div>-->
-<!--            </form>-->
-<!--        </div>-->
     </div>
-
 </body>
 </html>

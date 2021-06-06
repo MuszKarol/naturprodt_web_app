@@ -1,7 +1,8 @@
 <?php
 
 
-class Recipe {
+class Recipe
+{
     private $title;
     private $recipe;
     private $image;

@@ -2,7 +2,7 @@
 
 require_once 'config.php';
 
-//TODO singleton!!!!
+
 class Database
 {
     private $username;

@@ -6,7 +6,8 @@ require_once 'src/controllers/ProductController.php';
 require_once 'src/controllers/RecipeController.php';
 require_once 'src/controllers/UserController.php';
 
-class Routing {
+class Routing
+{
 
     public static $routes;
 

@@ -6,10 +6,12 @@ require_once __DIR__.'/../models/User.php';
 
 class SecurityController extends AppController
 {
-    public function login() {
+    public function login()
+    {
         $userRepository = new UserRepository();
 
-        if(!$this->isPost()) {
+        if(!$this->isPost())
+        {
             return $this->login('login');
         }
 
@@ -18,14 +20,17 @@ class SecurityController extends AppController
 
         $user = $userRepository->getUser($email);
 
-        if(!$user) {
+        if(!$user)
+        {
             return $this->render('login', ['messages'=>'User not exist!']);
         }
 
-        if($user->getEmail() !== $email){
+        if($user->getEmail() !== $email)
+        {
             return $this->render('login', ['messages'=>'User with this email not exist!']);
         }
-        if($user->getPassword() !== md5($password)){
+        if($user->getPassword() !== md5($password))
+        {
             return $this->render('login', ['messages'=>'Incorrect password!']);
         }
 
@@ -36,7 +41,8 @@ class SecurityController extends AppController
         header("Location: {$url}/products");
     }
 
-    public function logout(){
+    public function logout()
+    {
         session_destroy();
 
         $url = "http://$_SERVER[HTTP_HOST]";

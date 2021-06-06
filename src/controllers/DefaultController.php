@@ -2,26 +2,32 @@
 
 require_once 'AppController.php';
 
-class DefaultController extends AppController {
-    public function index() {
+class DefaultController extends AppController
+{
+    public function index()
+    {
         $this->render('login');
     }
 
-    public function register() {
+    public function register()
+    {
         $this->render('register');
     }
 
-    public function map() {
+    public function map()
+    {
         parent::sessionCheck();
         $this->render('map');
     }
 
-    public function productForm() {
+    public function productForm()
+    {
         parent::sessionCheck();
         $this->render('productForm');
     }
 
-    public function recipeForm() {
+    public function recipeForm()
+    {
         parent::sessionCheck();
         $this->render('recipeForm');
     }
