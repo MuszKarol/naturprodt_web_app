@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/d8d0f3c8c2.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/searchProducts.js" defer></script>
     <script type="text/javascript" src="./public/js/statistics.js" defer></script>
+    <script type="text/javascript" src="./public/js/copyToClipboard.js" defer></script>
     <title>Products - naturprodt</title>
 </head>
 
@@ -82,19 +83,19 @@
                 <div class="product social__section">
                     <ul class="product__list social__list">
                         <li class="social__item icon">
-                            <a onclick="">
+                            <a>
                                 <i class="fas fa-heart"><?= $product->getLike(); ?></i>
                             </a>
                         <li class="social__item icon">
-                            <a onclick="">
+                            <a>
                                 <i class="fas fa-minus-square"><?= $product->getDislike(); ?></i>
                             </a>
                         <li class="social__item icon">
-                            <a onclick="javascript:window.open('<?= $product->getLink(); ?>', '_blank');">
+                            <a id="test2" onclick="javascript:window.open('<?= $product->getLink(); ?>', '_blank');">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         <li class="social__item icon">
-                            <a onclick="">
+                            <a onclick="javascript:copyToClipboard('<?= $product->getLink(); ?>');">
                                 <i class="fas fa-share-alt"></i>
                             </a>
                 </div>
@@ -114,19 +115,19 @@
         <div class="product social__section">
             <ul class="product__list social__list">
                 <li class="social__item icon">
-                    <a onclick="">
+                    <a>
                         <i class="fas fa-heart"></i>
                     </a>
                 <li class="social__item icon">
-                    <a onclick="">
+                    <a>
                         <i class="fas fa-minus-square"></i>
                     </a>
                 <li class="social__item icon">
-                    <a id="shop" onclick="">
+                    <a id="shop">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                 <li class="social__item icon">
-                    <a>
+                    <a id="copy">
                         <i class="fas fa-share-alt"></i>
                     </a>
         </div>

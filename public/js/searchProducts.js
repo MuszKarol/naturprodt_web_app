@@ -60,5 +60,10 @@ function createProduct(product) {
         window.open(product.link)
     }, false);
 
+    const copy = clone.querySelector("#copy")
+    copy.addEventListener('click', function() {
+        copyToClipboard(product.link)
+    }, false);
+
     productContainer.appendChild(clone);
 }

@@ -66,15 +66,15 @@
         <div class="account__info info">
             <table class="account__info table">
                 <tr>
-                    <td>e-mail</td>
+                    <td>E-mail</td>
                     <td><?= $user->getEmail(); ?></td>
                 </tr>
                 <tr>
-                    <td>namel</td>
+                    <td>Name</td>
                     <td><?= $user->getName(); ?></td>
                 </tr>
                 <tr>
-                    <td>surname</td>
+                    <td>Surname</td>
                     <td><?= $user->getSurname(); ?></td>
                 </tr>
             </table>
