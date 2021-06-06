@@ -10,7 +10,8 @@ class Database
     private $host;
     private $database;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->username = USERNAME;
         $this->password = PASSWORD;
         $this->host = HOST;
@@ -18,7 +19,8 @@ class Database
     }
 
     public function connect() {
-        try {
+        try
+        {
             $conn = new PDO(
                 "pgsql:host=$this->host;port=5432;dbname=$this->database",
                 $this->username,
@@ -28,7 +30,8 @@ class Database
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         }
-        catch(PDOException $exception) {
+        catch(PDOException $exception)
+        {
             die("Connection failed: ".$exception->getMessage());
         }
     }
